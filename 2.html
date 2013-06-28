@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <button id="btn">Click</button>
+  <input id="ip" value="192.168.1.122">
+  <img id="img" src="">
+  <script>
+    var btn = document.getElementById('btn');
+    var ip = document.getElementById('ip');
+    var img = document.getElementById('img');
+
+    btn.onclick = function(){
+      img.src = 'http://' + ip.value + ':8080/shot/' + new Date().getTime();
+    }
+  </script>
+</body>
+</html>
