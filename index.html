@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>婴视宝</title>
+		<meta name="description" content="" />
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	</head>
+	<body>
+		<object id="video" type="application/x-decimated-video"></object>
+		<div id="monitor">
+			<div id="title" class="title">
+				<div class="title_content">
+					<div class="title_logo"><img class="baby_icon" id="babyIcon" src="images/baby_icon.png" alt=""/></div>
+					<div class="title_name"><span id="titleName">婴视宝</span></div>
+					<div class="title_battery"><img class="battery" id="batteryImg" src="images/battery_100.png" alt=""/></div>
+				</div>
+			</div>
+			<div class="intro_view" id="introView">
+				<img class="intro_initial" id="introInitial" src="images/function_initial.png" alt=""/>
+				<img class="intro_intro" id="introIntro" src="images/function_intro.png" alt=""/>
+			</div>
+			<div class="help_view" id="helpView">
+				<img class="help_image" src="images/help.png" alt=""/>
+			</div>
+			<div class="loading_view" id="loadingView">
+				<div class="loading_content">
+					<div class="loading_text">
+						正在连接中
+					</div><br/>
+					<img class="loading_img" src="images/connecting_modified.gif" alt=""></img>
+				</div>
+			</div>
+			<div class="ip_input_view" id="ipInputView">
+				<div class="ip_input" id="ipInput">
+					<img src="images/arrow_ip_up.png" class="arrow_ip_up" id="arrowIpUp" alt=""/>
+					<span>1</span><span>9</span><span class="space_right">2</span>&nbsp;. <span class="space_left">1</span><span>6</span><span class="space_right">8</span>&nbsp;. <span class="space_left">0</span><span>0</span><span class="space_right">0</span>&nbsp;. <span class="space_left">0</span><span>0</span><span class="space_right">0</span>
+					<button class="connect_img" id="connectBtn"></button>
+					<img src="images/arrow_ip_down.png" class="arrow_ip_down" id="arrowIpDown" alt="">
+				</div>
+			</div>
+			<div class="monitor_view" id="monitor_view">
+				<div class="monitor_content">
+					<div class="monitor_blank"></div>
+					<div class="monitor_img" id="monitorImgContent">
+						<div class="monitor_cell">
+							<div class="monitorWrap" id="monitorWrap">
+								<canvas id="monitorImg"></canvas>
+								<div id="bigInterrupt">
+									<div class="content"></div>
+								</div>
+							</div>
+						</div>
+							<div class="monitor_decibel" id="monitorDecibelBar">
+							<div class="bg"></div>
+							<span id="decibelTxtValue">59</span>
+							<div class="decibel_wrap">
+								<div class="decibel_content" id="decibelContent">
+									<div class="decibel_green" id='decibelImgCenter'></div>
+									<div class="decibel_black" id='decibelImgBg'></div>
+								</div>
+								<div class="decibel_alert_content" id="decibelAlertContent">
+									<div class="decibel_alert" id="decibelImgFloat">
+										<img src="images/decibelAlert.png" alt=""/>
+										<div class="decibel_number" id="decibelAlertNum">提醒分贝&nbsp;<span>0</span></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="monitor_time"><div id='monitorTime'>00:00:00</div></div>
+				</div>
+			</div>
+			<div id="monitorFooter" class="monitor_footer">
+				<img class="monitor_view_footer" id="monitorViewFooter" src="images/prompt_landscape_footer.png" />
+				<img class="ip_input_footer" id="ipInputFooter" src="images/IP_input_footer.png" />
+			</div>
+			<div id="dialogOne">
+				<div class="background"></div>
+				<div class="content">
+					<p id="alertText"></p>
+				</div>
+			</div>
+			<!--star brain-->
+			<div id="dialogTwo">
+				<img class="fail_loading" src="images/connect_fail.png" alt="" />
+			</div>
+			<div id="thirdDialog">
+				<div class="bg"></div>
+				<div class="content">
+					<p>你有手机来电</p><br/>
+					<!-- img id="MonitorCallImg" src="images/Tel_calling_a.png"/ -->
+					<p><img class="caution_button" src="images/caution_button_s.png"/></p>
+				</div>
+			</div>
+			<!--end brain-->
+		</div>
+		<div class="monitor_small_view" id="picInPic">
+			<div class="monitor_content" id="picMonitorContent">
+				<!-- <img src="" id="picMonitorImg" class="monitor_img" alt=""/>	 -->
+				<canvas id="picMonitorImg" class="monitor_img"></canvas>			
+				<div class="monitor_decibel" id="smallDecibel">
+					<div class="decibel_black" id="floatdecibelImgBg"></div>
+				</div>
+			</div>
+			<div class="monitor_footer" id="picFooter">
+			</div>
+			<div class="small_dialog" id="smallDialog">
+				<div class="background"></div>
+				<div class="content">
+					<p id="picAlertText">
+					</p>
+					<div class="video_interrupt">
+						<span class="key_menu"></span>
+					</div>
+				</div>
+			</div>
+			<div class="small_call_dialog" id="smallCallDialog">
+				<div class="bg"></div>
+				<div class="content" id="TelCallImg" style="top:7%; line-height:350%">
+					<p>你有手机来电</p>
+					<!-- img id="smalCallImg" style="height: 50%" src="images/Tel_calling_a.png"/ -->
+					<p><img class="small_caution_button" src="images/caution_button.png"/></p>
+				</div>
+			</div>
+			<div id="hideMonitor" class="hide_div">
+				<img id="hideImg" src="images/hidden_view.png" alt=""/>
+			</div>
+		</div>
+		<script type="text/javascript" src="js/operaTV.js"></script>
+		<script type="text/javascript" src="js/decibelAndbattery.js"></script>
+		<script type="text/javascript" src="js/index.js"></script>
+		<script type="text/javascript" src="#" id="jsonp"></script>
+	</body>
+</html>

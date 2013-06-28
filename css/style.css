@@ -1,0 +1,657 @@
+body {
+	color: #ededed;
+	text-align: center;
+	white-space: nowrap;
+	overflow: hidden;
+	font-family: '华康黑体W5-A', arial, sans-serif;
+}
+/*********************
+ * 遮罩和应用样式
+ ********************/
+#mask {
+	width: 100%;
+	opacity: 0;
+	height: 100%;
+}
+#video {
+	width: 68%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+#monitor {
+	width: 33%;
+	height: 100%;
+	position: absolute;
+	right: 0;
+	top: 0;
+	background-image: url(../images/sideBg_list.png);
+	background-size: cover;
+}
+/***********************
+ * title样式
+ ***********************/
+div.title {
+	height: 12.5%;
+	width: 100%;
+	position: relative;
+	background: url(../images/title.png) no-repeat;
+	background-size: 100% 100%;
+}
+div.title_content {
+	width: 100%;
+	height: 100%;
+	display: table;
+}
+div.title_content div.title_logo {
+	width: 20%;
+	display: table-cell;
+	vertical-align: middle;
+	font-size: 0;
+	text-align: left;
+}
+div.title_content div.title_name {
+	width: 60%;
+	display: table-cell;
+	vertical-align: middle;
+}
+div.title_content div.title_battery {
+	width: 20%;
+	display: table-cell;
+	vertical-align: middle;
+	font-size: 0;
+}
+/**************************
+ * guideBar样式
+ **************************/
+div.monitor_footer {
+	height: 10%;
+	width: 100%;
+}
+div.monitor_footer#monitorFooter img.ip_input_footer {
+	height: 100%;
+	width: 96%;
+	margin: auto 2%;
+}
+div.monitor_footer#monitorFooter img.monitor_view_footer {
+	height: 100%;
+	width: 96%;
+	margin: 2% auto;
+}
+/*****************
+ * loading page
+ *****************/
+div.loading_view {
+	width: 100%;
+	height: 76.5%;
+}
+div.loading_content {
+	display: table-cell;
+	vertical-align: middle;
+	width: 100%;
+	height: 100%;
+}
+div.loading_text {
+	margin-left: 2%;
+}
+/*******************
+ * 手动连接页面
+ ********************/
+div.ip_input_view div.ip_input {
+	display: table-cell;
+	vertical-align: middle;
+	letter-spacing: 2px;
+}
+div.ip_input_view  span.space_left {
+	margin-left: 4px;
+}
+div.ip_input_view span.space_right {
+	margin-right: 4px;
+}
+div.ip_input_view div.ip_input span.selected {
+	color: #fbc92b;
+}
+div.ip_input_view div.ip_input button.selected {
+	background: url(../images/connectButton_focus2.png) no-repeat;
+	background-size: 100% 100%;
+}
+/*****************
+ *dialog样式
+ ***************/
+#dialogOne, #bigInterrupt {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+}
+#bigInterrupt {
+	background-color: black;
+	display: none;
+}
+
+#bigInterrupt .content {
+	width: 100%;
+	height: 100%;
+	display: table-cell;
+	vertical-align: middle;
+	top: 0;
+	position: relative;
+	line-height: 34px;
+}
+
+#dialogOne .background {
+	width: 100%;
+	height: 100%;
+	opacity: 0.88;
+	background-color: black;
+	position: absolute;
+}
+/*the style  of dialog2*/
+#dialogTwo {
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	opacity: 0.88;
+	position: absolute;
+	top: 0;
+}
+#thirdDialog, div.small_call_dialog {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	display: none;
+	z-index: 1;
+}
+#thirdDialog .bg, div.small_call_dialog .bg{
+	background-color: black;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	opacity: 0.8;
+}
+#thirdDialog .content, div.small_call_dialog .content{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 15%;
+}
+#thirdDialog .content p:nth-child(1) {
+	margin-top: 35%;
+}
+#thirdDialog .content p:nth-child(1) img {
+	margin-bottom: 10px;
+	width: 40%;
+}
+#thirdDialog .content p:nth-child(2) {
+	margin-top: 5%;
+}
+div.small_call_dialog .content p:nth-child(1) img {
+	width: 53%;
+	margin-top: 5%;
+	margin-bottom: 5px;
+}
+div.small_call_dialog .content p:nth-child(1) img.landscape {
+	width: 33%;
+}
+div.small_call_dialog .content p:nth-child(1) {
+	margin-top: 10%;
+}
+
+/***********
+ *监视页面样式
+ ************/
+div.monitor_view {
+	height: 75%;
+	width: 100%;
+	display: none;
+}
+div.monitor_content {
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+div.monitor_content div.monitor_blank {
+	width: 100%;
+	height: 10%;
+}
+div.monitor_content div.monitor_img {
+	width: 100%;
+	height: 75%;
+	display: table;
+	position: relative;
+}
+div.monitor_content div.monitor_img .monitor_cell {
+	display: table-cell;
+	vertical-align: middle;
+}
+div.monitor_content .monitorWrap {
+	width: 380px;
+	height: 80%;
+	margin: auto;
+	position: relative;
+	max-width: 70%;
+}
+div.monitor_content div.monitor_img canvas {
+	width: 100%;
+	height: 100%;
+	max-height: 100%;
+}
+/* 监控时间显示 */
+div.monitor_time {
+	width: 100%;
+	height: 15%;
+	display: table;
+	color: #cccccc;
+}
+div.monitor_time #monitorTime {
+	display: table-cell;
+	vertical-align: middle;
+}
+/* 监控分贝条显示 */
+div.monitor_content div.monitor_decibel {
+	position: absolute;
+	height: 70%;
+	top: 15%;
+	right: 4%;
+	color: #3BADDB;
+	width: 9%;
+}
+div.decibel_wrap {
+	width: 100%;
+	height: 88%;
+	position: relative;
+}
+div.monitor_content div.monitor_decibel div.decibel_content {
+	width: 8px;
+	height: 100%;
+	position: relative;
+	margin: auto;
+}
+span#decibelTxtValue {
+	display: inline-block;
+	position: relative;
+}
+div.monitor_content div.monitor_decibel div.decibel_content div.decibel_green {
+	background: url(../images/decibelBars_s_active.png) repeat-y 50% 0%;
+	height: 100%;
+	position: absolute;
+	top: 5px;
+	width: 8px;
+}
+div.monitor_content div.monitor_decibel div.decibel_content div.decibel_black {
+	background: url(../images/decibelBar_s_bg.png) repeat-y 50% 0%;
+	height: 50%;
+	position: absolute;
+	top: 5px;
+	width: 8px;
+}
+div.monitor_content div.monitor_decibel div.decibel_alert_content {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 5px;
+	color: black;
+}
+div.monitor_content div.monitor_decibel #decibelAlertNum span {
+	margin-right: 40px;
+}
+div.monitor_content div.monitor_decibel div.decibel_alert_content div.decibel_alert img {
+	margin-top: -20px;
+	display: block;
+}
+div.monitor_content div.monitor_decibel .bg {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	opacity: 0.5;
+	border-radius: 5px;
+}
+#dialogOne .alert_confirm {
+	margin-top: 13%;
+}
+/**************
+ * 画中画样式
+ ***************/
+div.monitor_small_view {
+	width: 17%;
+	height: 44%;
+	position: absolute;
+	border: solid 1px #CCCCCC;
+	opacity: 0.75;
+	display: none;
+	right: 10px;
+	bottom: 10px;
+}
+div.monitor_small_view div.monitor_content canvas.monitor_img {
+	width: 100%;
+	height: 100%;
+}
+.monitor_small_view .monitor_content .monitor_decibel {
+	position: absolute;
+	width: 3%;
+	height: 78%;
+	top: 4%;
+	right: 3%;
+	background-color: black;
+}
+.monitor_small_view .monitor_content .monitor_decibel .decibel_green, .monitor_small_view .monitor_content .monitor_decibel .decibel_black {
+	width: 100%;
+	position: absolute;
+	background-color: rgb(0,176,240);
+	bottom: 0;
+}
+.monitor_small_view .monitor_footer {
+	background-color: #1e4299;
+	background: url(../images/picture_in_picture_footer_02.png) no-repeat;
+	background-size: 100% 100%;
+	bottom: 0;
+	position: absolute;
+}
+/***********************
+ * 画中画弹出框样式
+ ***********************/
+.monitor_small_view .small_dialog {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 1;
+	line-height: 34px;
+	color: #ededed;
+}
+.monitor_small_view .background {
+	opacity: 0.9;
+	background-color: black;
+	height: 100%;
+	position: absolute;
+	width: 100%;
+}
+.monitor_small_view .content {
+	display: table-cell;
+	vertical-align: middle;
+	position: relative;
+	width: 100%;
+}
+div.small_dialog .alert_confirm {
+	margin-top: 22%;
+}
+div.small_dialog .small_alert_confirm {
+	margin-top: 13%;
+}
+div.small_dialog .top_alert_confirm {
+	position: absolute;
+	width: 100%;
+	top: 20%;
+}
+div.small_dialog .land_top_alert_confirm {
+	position: absolute;
+	width: 100%;
+	top: 12%;
+}
+#picAlertText.interrupt_p {
+	position: absolute;
+	width: 100%;
+}
+.monitor_small_view .key_menu:before {
+	content: url(../images/red.png);
+	position: relative;
+	margin-right: 4px;
+}
+@media (max-device-width: 1366px) {
+	body {
+		font-size: 24px;
+	}
+	#monitor_content {
+		height: 66%;
+	}
+	#monitor_time {
+		height: 10%;
+	}
+	img.loading_img {
+		width: 30px;
+		height: 30px;
+		margin: auto;
+	}
+	/*
+	 * 功能介绍页面样式
+	 */
+	div.intro_view {
+		width: 100%;
+		height: 100%;
+	}
+	div.intro_view img.intro_initial {
+		width: 100%;
+		height: 100%;
+	}
+	div.intro_view img.intro_intro {
+		width: 100%;
+		height: 100%;
+	}
+	/*
+	 * help页面样式
+	 */
+	div.help_view {
+		width: 100%;
+		height: 100%;
+	}
+	div.help_view img.help_image {
+		width: 100%;
+		height: 100%;
+	}
+	/*
+	 * 手动连接页面样式
+	 */
+	div.ip_input_view {
+		width: 100%;
+		height: 100%;
+		background: url(../images/IP_input.png) no-repeat;
+		background-size: 100% 100%;
+	}
+	div.ip_input_view button.connect_img {
+		width: 102px;
+		height: 61px;
+		background: url(../images/connectButton.png) no-repeat;
+		background-size: 100% 100%;
+		padding: 0px;
+		border: none;
+		position: relative;
+		margin-top: -3%;
+		float: right;
+	}
+	div.ip_input_view img.arrow_ip_up {
+		position: absolute;
+		top: 44%;
+		width: 20px;
+		height: 10px;
+	}
+	div.ip_input_view img.arrow_ip_down {
+		position: absolute;
+		top: 51%;
+		width: 20px;
+		height: 10px;
+	}
+	img.caution_button {
+		width: 37%;
+	}
+	img.small_caution_button {
+		width: 36%;
+	}
+	img.small_caution_button_land {
+		width: 50%;
+	}
+	div.small_dialog .bottom_alert_confirm {
+		position: absolute;
+		width: 100%;
+		bottom: 20px;
+	}
+	#babyIcon {
+		width: 40%;
+		padding-left: 20%;
+		height: 39%;
+	}
+	#batteryImg {
+		width: 35%;
+		padding-left: 5%;
+	}
+	img.fail_loading {
+		width: 100%;
+		height: 100%;
+	}
+	#hideImg {
+		width: 164px;
+		height: 60px;
+		position: absolute;
+		right: 16%;
+		bottom: 1%;
+	}
+	.monitor_small_view .monitor_footer_por {
+		width: 229px;
+		height: 44px;
+	}
+	.monitor_small_view .monitor_footer_land {
+		width: 333px;
+		height: 47px;
+	}
+	.monitor_small_view .content div {
+		position: absolute;
+		bottom: 16px;
+		right: 0;
+		width: 100%;
+	}
+	div.decibel_alert img {
+		width: 195px;
+		height: 50px;
+	}
+	div.monitor_content div.monitor_decibel div.decibel_alert_content div.decibel_alert {
+		position: absolute;
+		top: 100%;
+		right: 5px;
+		width: 195px;
+		height: 50px;
+		line-height: 50px;
+	}
+	div.monitor_content div.monitor_decibel div.decibel_alert_content div.decibel_number {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0px;
+		left: 0px;
+		margin-top: -11%;
+	}
+	
+	#dialogOne .content {
+		width: 100%;
+		height: 100%;
+		display: table-cell;
+		vertical-align: middle;
+		top: 15px;
+		position: relative;
+		line-height: 33px;
+	}
+}
+@media (min-device-width: 1367px) {
+	body {
+		font-size: 32px;
+	}
+	img.loading_img {
+		width: 50px;
+		height: 50px;
+		margin: auto;
+	}
+	/*
+	 * 手动连接页面样式
+	 */
+	div.ip_input_view {
+		width: 100%;
+		height: 100%;
+		background: url(../images/IP_input.png) no-repeat;
+		background-size: 100% 100%;
+	}
+	div.ip_input_view button.connect_img {
+		width: 144px;
+		height: 86px;
+		background: url(../images/connectButton.png) no-repeat;
+		padding: 0px;
+		border: none;
+		position: relative;
+		margin-top: -4%;
+		float: right;
+	}
+	div.ip_input_view img.arrow_ip_up {
+		position: absolute;
+		top: 45%;
+	}
+	div.ip_input_view img.arrow_ip_down {
+		position: absolute;
+		top: 51%;
+	}
+	/*
+	 * 画中画隐藏页面样式
+	 */
+	#hideImg {
+		width: 226px;
+		height: 85px;
+		position: absolute;
+		right: 15%;
+		bottom: 1%;
+	}
+	#babyIcon {
+		padding-left: 22%;
+	}
+	.monitor_small_view .monitor_footer_por {
+		width: 322px;
+		height: 62px;
+	}
+	.monitor_small_view .monitor_footer_land {
+		width: 428px;
+		height: 66px;
+	}
+	.monitor_small_view .content div {
+		position: absolute;
+		bottom: 22px;
+		right: 0;
+		width: 100%;
+	}
+	div.small_dialog .bottom_alert_confirm {
+		position: absolute;
+		width: 100%;
+		bottom: 27px;
+	}
+	div.monitor_content div.monitor_decibel div.decibel_alert_content div.decibel_alert {
+		position: absolute;
+		top: 100%;
+		right: 7px;
+		width: 274px;
+		height: 86px;
+		line-height: 86px;
+	}
+	div.monitor_content div.monitor_decibel div.decibel_alert_content div.decibel_alert img {
+		margin-top: -33px;
+	}
+	div.monitor_content div.monitor_decibel div.decibel_alert_content div.decibel_number {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0px;
+		left: 0px;
+		margin-top: -38px;
+	}
+	.monitor_small_view .small_dialog {
+		line-height: 40px;
+	}
+	
+	#dialogOne .content {
+		width: 100%;
+		height: 100%;
+		display: table-cell;
+		vertical-align: middle;
+		top: 21px;
+		position: relative;
+		line-height: 46px;
+	}
+
+}
