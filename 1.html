@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<title>Test</title>
+		<script>
+            /*
+             * 产生随机数
+             */
+            var curDate = {
+                getCurDate : function() {
+                    var d = new Date();
+                    var strDate = d.getFullYear() + "" + d.getMonth() + "" + d.getDate() + "" + d.getDay() + "" + d.getHours() + "" + d.getMinutes() + "" + d.getSeconds();
+                    return Math.random() + "a" + strDate;
+                }
+            }
+            function getIp() {
+			     var ip = document.getElementById('txtIp');
+			     return ip.value;
+            }
+            
+            function testLoadImg() {
+            	log('Start load img');
+                var canvas = document.getElementById('canvas');
+                var context = canvas.getContext('2d');
+                var img = document.createElement('img');
+                img.src = 'http://' + getIp() + ':8080/shot_v.jpg' + "?t=" + curDate.getCurDate();
+                log('src:' + img.src);
+                img.onload = function() {
+                	log('The img was loaded');
+                  context.drawImage(img, 0, 0);
+                  var id = '1234';
+                  var previous = document.getElementById(id);
+                  if(previous){
+                    previous.parentNode.removeChild(previous);
+                  }
+                  img.id = '1234';
+                  document.body.appendChild(img);
+                }
+                img.onerror = img.onabort = function(){
+                  log('load image error.');
+                };
+            }
+            
+            function log(str){
+            	var logDom = document.getElementById('txtLog');
+            	logDom.value = logDom.value + '\r\n' + str;
+            }
+            
+              function testLoadJS() {
+              	log('Start load js');
+                var _JsonObj = document.createElement('script');
+				_JsonObj.id = 'jsonp';
+				var temp = document.getElementById('jsonp');
+				if(temp) {
+					document.body.replaceChild(_JsonObj, temp);
+					temp.onload = null;
+					temp = null;
+				} else {
+					document.body.appendChild(_JsonObj);
+				}
+				temp = document.getElementById('jsonp');
+				temp.onload = function(){
+					log('The js was loaded');
+					setTimeout(function(){
+						log('rec:' + wbm_info);
+					},500);
+				}
+				temp.src = 'http://' + getIp() + ':8080/info.js' + "?t=" + curDate.getCurDate();
+				log('src:' + temp.src);
+            }
+		</script>
+	</head>
+	<body>
+		<input type="text" id="txtIp" />
+		<input type="button" value="TestLoadImg" onclick="testLoadImg()"/>
+		<input type="button" value="TestLoadJs" onclick="testLoadJS()"/>
+		</br>
+		<textarea rows="10" cols="50" id="txtLog"></textarea></br>
+		<canvas id="canvas" width="400" height="400">Don't support canvas</canvas>
+		
+	</body>
+</html>
