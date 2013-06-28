@@ -26,7 +26,7 @@
                 var canvas = document.getElementById('canvas');
                 var context = canvas.getContext('2d');
                 var img = document.createElement('img');
-                img.src = 'http://' + getIp() + ':8080/shot_v.jpg' + "?t=" + curDate.getCurDate();
+                img.src = 'http://' + getIp() + ':8080/shot_v' + "?t=" + curDate.getCurDate();
                 log('src:' + img.src);
                 img.onload = function() {
                 	log('The img was loaded');
@@ -46,7 +46,7 @@
             
             function log(str){
             	var logDom = document.getElementById('txtLog');
-            	logDom.value = logDom.value + '\r\n' + str;
+            	logDom.value = str;
             }
             
               function testLoadJS() {
